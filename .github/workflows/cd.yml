@@ -20,9 +20,13 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/checkout@v3
+    - uses: actions/checkout@v3
 
-      - uses: actions/download-artifact@v3
-        with:
-          name: my-artifact
-      - run: echo deployed
+    - uses: actions/download-artifact@v3
+      with:
+        name: my-artifact
+
+    - name: Display structure of downloaded files
+      run: ls -R
+      
+    - run: echo deployed
